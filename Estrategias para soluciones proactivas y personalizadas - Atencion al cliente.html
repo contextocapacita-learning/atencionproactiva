@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategias para Soluciones Proactivas y Personalizadas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-purple: #4A1A7F;
+            --vibrant-purple: #7B47C2;
+            --golden-yellow: #EDB60F;
+            --dark-gray: #231F20;
+            --white: #FFFFFF;
+            --success-green: #10B981;
+            --error-red: #EF4444;
+            --warning-orange: #F59E0B;
+            --info-blue: #3B82F6;
+        }
+        :root {
+            --background-light: var(--white);
+            --text-dark: var(--dark-gray);
+            --primary-color: var(--dark-purple);
+            --secondary-color: var(--vibrant-purple);
+            --accent-color: var(--golden-yellow);
+            --card-border-proactive: var(--secondary-color);
+            --card-header-proactive: var(--secondary-color);
+            --highlight-background: rgba(237, 182, 15, 0.2);
+            --highlight-border: var(--golden-yellow);
+            --quote-color: var(--golden-yellow);
+            --stat-box-bg: rgba(74, 26, 127, 0.1);
+            --stat-value-color: var(--dark-purple);
+            --stat-item-bg: rgba(123, 71, 194, 0.1);
+            --stat-item-border: var(--vibrant-purple);
+            --example-arrow: var(--dark-purple);
+            --example-title-color: var(--dark-purple);
+            --highlight-item-bg: rgba(123, 71, 194, 0.1);
+            --highlight-item-border: var(--vibrant-purple);
+            --hero-icon-color: var(--golden-yellow);
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-purple));
+            color: var(--white);
+            padding: 40px 30px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -40px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 30px 0 20px;
+            color: var(--primary-color);
+        }
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 25px 0 15px;
+            color: var(--text-dark);
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+        }
+        .content {
+            padding: 30px;
+        }
+        .section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .highlight {
+            background: var(--highlight-background);
+            border-left: 4px solid var(--highlight-border);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .strategy-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--vibrant-purple);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .strategy-card:hover {
+            transform: none; /* Resetting transform on card hover to allow title hover */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .strategy-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            justify-content: space-between; /* To push the icon to the right */
+        }
+        .strategy-title:hover {
+            color: var(--golden-yellow);
+        }
+        .strategy-title-text {
+            display: flex;
+            align-items: center;
+        }
+        .strategy-icon {
+            margin-right: 12px;
+            color: var(--golden-yellow);
+            font-size: 1.5rem;
+        }
+        .accordion-icon {
+            font-size: 1.2rem;
+            color: var(--vibrant-purple);
+            transition: transform 0.3s ease;
+        }
+        .strategy-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.7s ease-out; /* Further adjusted transition for smoother effect */
+            opacity: 0;
+            padding-top: 0; /* Ensures padding also transitions */
+            padding-bottom: 0; /* Ensures padding also transitions */
+        }
+        .strategy-content.expanded {
+            max-height: 2000px; /* Generously large to accommodate all content */
+            opacity: 1;
+            padding-top: 15px; /* Re-add padding when expanded */
+            padding-bottom: 0px; /* Adjust as needed for bottom spacing */
+        }
+        .implementation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .implementation-card {
+            background: linear-gradient(135deg, var(--stat-item-bg), rgba(255, 255, 255, 0.9));
+            border: 2px solid var(--stat-item-border);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .implementation-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--golden-yellow);
+            background: linear-gradient(135deg, var(--highlight-background), rgba(255, 255, 255, 0.9));
+        }
+        .implementation-icon {
+            font-size: 3rem;
+            color: var(--vibrant-purple);
+            margin-bottom: 15px;
+        }
+        .implementation-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .example-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .example-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .example-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--example-arrow);
+            font-weight: bold;
+            line-height: 1.6;
+        }
+        .quiz-container {
+            background: var(--stat-box-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--vibrant-purple);
+        }
+        .quiz-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .quiz-option {
+            background: var(--white);
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        .quiz-option:hover {
+            border-color: var(--vibrant-purple);
+            background: var(--highlight-item-bg);
+        }
+        .quiz-option.selected {
+            border-color: var(--vibrant-purple);
+            background: var(--highlight-item-bg);
+        }
+        .quiz-option.correct {
+            border-color: var(--success-green);
+            background: rgba(16, 185, 129, 0.1);
+        }
+        .quiz-option.incorrect {
+            border-color: var(--error-red);
+            background: rgba(239, 68, 68, 0.1);
+        }
+        .quiz-feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+        .quiz-feedback.correct {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid var(--success-green);
+            color: var(--success-green);
+        }
+        .quiz-feedback.incorrect {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--error-red);
+            color: var(--error-red);
+        }
+        .interactive-element {
+            background: var(--white);
+            border: 2px solid var(--vibrant-purple);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+            transition: all 0.3s ease;
+        }
+        .interactive-element:hover {
+            border-color: var(--golden-yellow);
+            box-shadow: 0 5px 20px rgba(123, 71, 194, 0.2);
+        }
+        .scenario-container {
+            background: linear-gradient(135deg, var(--highlight-item-bg), rgba(237, 182, 15, 0.1));
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid var(--golden-yellow);
+        }
+        .scenario-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .scenario-icon {
+            margin-right: 10px;
+            color: var(--golden-yellow);
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0 20px;
+            padding: 20px 0;
+            border-top: 1px solid #e5e7eb;
+        }
+        .nav-button {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-button:hover {
+            background: #3C1565;
+            transform: translateY(-2px);
+        }
+        .nav-button:disabled {
+            background: #9ca3af;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .section-indicator {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            padding: 8px 16px;
+            background: var(--stat-box-bg);
+            border-radius: 20px;
+        }
+        .progress-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .hero-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: var(--hero-icon-color);
+            font-size: 1.5rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .score-display {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 15px 25px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 600;
+            margin: 20px 0;
+            font-size: 1.1rem;
+            display: none;
+        }
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .tool-card {
+            background: var(--white);
+            border: 2px solid var(--stat-item-border);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .tool-card:hover {
+            border-color: var(--golden-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(123, 71, 194, 0.2);
+        }
+        .tool-icon {
+            font-size: 2.5rem;
+            color: var(--vibrant-purple);
+            margin-bottom: 15px;
+        }
+        .tool-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .quiz-buttons-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            .content {
+                padding: 20px;
+            }
+            .implementation-grid,
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 480px) {
+            header {
+                padding: 30px 15px 20px;
+            }
+            h1 {
+                font-size: 1.7rem;
+            }
+            .subtitle {
+                font-size: 1rem;
+            }
+            .content {
+                padding: 15px;
+            }
+            .strategy-card,
+            .quiz-container,
+            .scenario-container {
+                padding: 20px;
+                margin: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-indicator">Progreso: <span id="progressText">1/5</span></div>
+    <div class="container">
+        <header>
+            <i class="fas fa-cogs hero-icon floating"></i>
+            <h1>Estrategias para soluciones proactivas y personalizadas</h1>
+            <p class="subtitle">Desarrolla habilidades avanzadas para anticipar necesidades del cliente y ofrecer experiencias excepcionales mediante estrategias inteligentes</p>
+        </header>
+        <div class="content">
+            <section class="section active" id="section-0">
+                <h2>Fundamentos de las estrategias proactivas</h2>
+                <p>Las estrategias proactivas transforman la atención al cliente de un modelo reactivo a uno anticipatorio, donde <strong>las soluciones se implementan antes de que los problemas se manifiesten</strong>.</p>
+                <div class="highlight">
+                    <p><strong>Definición clave:</strong> La proactividad en atención al cliente implica ofrecer soluciones o compensaciones de manera anticipada cuando se detecta un problema o inconveniente.</p>
+                </div>
+                <div class="interactive-element">
+                    <h3><i class="fas fa-lightbulb" style="color: var(--golden-yellow); margin-right: 10px;"></i>Ejemplo Práctico</h3>
+                    <p>Si se detecta un error de facturación, se informa al cliente sobre el problema y su corrección <strong>antes de que lo note</strong>, incluyendo una disculpa y posible compensación.</p>
+                    <div style="background: var(--stat-box-bg); padding: 20px; border-radius: 8px; margin-top: 15px;">
+                        <strong>Caso real:</strong> Una empresa de telecomunicaciones detecta una falla que afectará el servicio durante 2 horas. En lugar de esperar las quejas, envía SMS a todos los clientes afectados explicando la situación, el tiempo estimado de resolución y ofrece un descuento en la próxima factura.
+                    </div>
+                </div>
+                <h3>¿Por qué son importantes las estrategias proactivas?</h3>
+                <div class="implementation-grid">
+                    <div class="implementation-card">
+                        <div class="implementation-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="implementation-title">Fidelización</div>
+                        <p>Los clientes valoran que la empresa se preocupe por su experiencia antes de que surjan problemas</p>
+                    </div>
+                    <div class="implementation-card">
+                        <div class="implementation-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="implementation-title">Prevención</div>
+                        <p>Evita escalamientos de problemas menores a crisis mayores que dañen la reputación</p>
+                    </div>
+                    <div class="implementation-card">
+                        <div class="implementation-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="implementation-title">Eficiencia</div>
+                        <p>Reduce el volumen de contactos reactivos y optimiza los recursos del equipo de soporte</p>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.imgur.com/L0xF2y1.jpeg" alt="Beneficios de las estrategias proactivas" />
+                </div>
+            </section>
+            <section class="section" id="section-1">
+                <h2>Estrategias de monitoreo y análisis</h2>
+                <p>La anticipación efectiva de necesidades requiere sistemas robustos de monitoreo y análisis de datos del cliente.</p>
+                <div class="strategy-card">
+                    <div class="strategy-title" onclick="toggleStrategy(this)">
+                        <div class="strategy-title-text">
+                            <i class="fas fa-chart-bar strategy-icon"></i>
+                            Monitoreo del comportamiento del cliente
+                        </div>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </div>
+                    <div class="strategy-content">
+                        <p>El análisis sistemático de las interacciones del cliente proporciona insights valiosos para la intervención proactiva.</p>
+                        <h4>Técnicas de implementación:</h4>
+                        <ul class="example-list">
+                            <li><strong>Análisis de navegación web:</strong> Identificar páginas donde los usuarios abandonan frecuentemente o pasan mucho tiempo sin completar acciones</li>
+                            <li><strong>Seguimiento de patrones de uso:</strong> Detectar cambios en la frecuencia de uso que puedan indicar insatisfacción o problemas técnicos</li>
+                            <li><strong>Análisis de historial de compras:</strong> Predecir necesidades futuras basándose en ciclos de compra anteriores</li>
+                            <li><strong>Métricas de engagement:</strong> Monitorear participación en emails, notificaciones y contenido para identificar riesgo de abandono</li>
+                        </ul>
+                        <div class="scenario-container">
+                            <div class="scenario-title">
+                                <i class="fas fa-desktop scenario-icon"></i>
+                                Caso práctico: E-commerce
+                            </div>
+                            <p>Una tienda online detecta que un cliente regular no ha realizado compras en 60 días (su promedio es cada 30 días) y además visitó la página de "cancelar cuenta". El sistema activa automáticamente un email personalizado con una oferta especial y un mensaje del equipo de soporte preguntando si necesita ayuda.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title" onclick="toggleStrategy(this)">
+                        <div class="strategy-title-text">
+                            <i class="fas fa-robot strategy-icon"></i>
+                            Empatía predictiva con IA
+                        </div>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </div>
+                    <div class="strategy-content">
+                        <p>La <strong>Empatía predictiva con inteligencia artificial (IA)</strong> va más allá de la reacción: busca <strong>anticipar las necesidades, frustraciones o deseos</strong> de un cliente antes de que él mismo sea plenamente consciente o antes de que se conviertan en un problema. Funciona como un "sexto sentido" impulsado por datos.</p>
+                        <p>Imagina que la IA es capaz de "leer entre líneas" el comportamiento de tus clientes. Al analizar patrones en su historial de compras, su navegación web, el tono de sus mensajes de soporte e incluso cómo interactúan con tu producto o servicio, la IA puede predecir futuras acciones o estados de ánimo.</p>
+                        <h4>¿Cómo lo logra la IA?</h4>
+                        <ul class="example-list">
+                            <li><strong>Análisis masivo de datos:</strong> Procesa enormes cantidades de información (qué compran, cuándo, qué páginas visitan, cuánto tiempo permanecen, etc.) que sería imposible analizar manualmente.</li>
+                            <li><strong>Identificación de patrones ocultos:</strong> Detecta correlaciones y tendencias que los humanos no verían, indicando, por ejemplo, que un usuario que deja de usar una función específica durante X días tiene un 80% de probabilidad de cancelar su suscripción.</li>
+                            <li><strong>Aprendizaje continuo:</strong> La IA aprende y mejora con cada nueva interacción y cada nuevo dato, volviéndose más precisa en sus predicciones con el tiempo.</li>
+                        </ul>
+                        <h4>Aplicaciones prácticas:</h4>
+                        <ul class="example-list">
+                            <li><strong>Análisis de sentimientos avanzado:</strong> No solo detecta el tono (positivo/negativo) en texto o voz, sino que interpreta matices de frustración, confusión o indecisión, incluso si el cliente no lo expresa directamente.</li>
+                            <li><strong>Predicción proactiva de abandono (Churn Prediction):</strong> Identifica con alta precisión a clientes en riesgo de irse, basándose en cambios sutiles en su comportamiento de uso o interacción.</li>
+                            <li><strong>Recomendaciones hiper-personalizadas:</strong> Sugiere productos, servicios o contenido exactamente en el momento adecuado, basándose en la "ruta" que clientes similares han seguido o en necesidades que la IA predice que surgirán.</li>
+                            <li><strong>Optimización de la intervención:</strong> Determina el canal y el mensaje más efectivos para contactar a un cliente específico, maximizando la posibilidad de una respuesta positiva.</li>
+                        </ul>
+                        <div class="scenario-container">
+                            <div class="scenario-title">
+                                <i class="fas fa-lightbulb scenario-icon"></i>
+                                Ejemplo práctico: servicio de streaming
+                            </div>
+                            <p>Un servicio de streaming de películas y series utiliza IA para monitorear el comportamiento de sus suscriptores.</p>
+                            <ul>
+                                <li>La IA detecta que un usuario, que solía ver series varias veces a la semana, ha reducido drásticamente su actividad en los últimos 15 días.</li>
+                                <li>Además, nota que este usuario ha visitado la sección de "Administrar Suscripción" y la de "Precios de la Competencia" varias veces, aunque no ha hecho clic en "Cancelar".</li>
+                                <li>El sistema también identifica que el usuario buscó "cómo solucionar buffering" hace 3 días, lo que podría indicar un problema técnico no reportado.</li>
+                            </ul>
+                            <p>La IA, al correlacionar todos estos puntos, predice un <strong>alto riesgo de cancelación (Empatía Predictiva)</strong>. Automáticamente, el sistema genera una acción proactiva:</p>
+                            <p><strong>Acción Proactiva:</strong> Envía un email personalizado al usuario con el asunto "¡Sentimos si hay problemas! Te ayudamos a optimizar tu experiencia". El correo ofrece:</p>
+                            <ol>
+                                <li>Un tutorial rápido para solucionar problemas de buffering.</li>
+                                <li>Un código de 1 mes gratis o un descuento para la próxima factura.</li>
+                                <li>Recomendaciones personalizadas de nuevas series que sabe que le interesan, basadas en su historial.</li>
+                            </ol>
+                            <p>Esta intervención, antes de que el cliente llame frustrado o cancele, transforma una posible pérdida en una oportunidad de retención y fidelización, demostrando que la empresa se preocupa por su experiencia.</p>
+                        </div>
+                        <div class="tools-grid">
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="tool-title">Machine learning</div>
+                                <p>Algoritmos que aprenden de datos históricos para predecir comportamientos futuros</p>
+                            </div>
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-comments"></i>
+                                </div>
+                                <div class="tool-title">NLP</div>
+                                <p>Procesamiento de lenguaje natural para analizar comunicaciones escritas</p>
+                            </div>
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div class="tool-title">Analytics</div>
+                                <p>Análisis avanzado de datos para identificar patrones y tendencias</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="section-2">
+                <h2>Estrategias de comunicación proactiva</h2>
+                <p>Las técnicas de comunicación proactiva aseguran que los clientes estén informados y preparados antes de que los problemas los afecten.</p>
+                <div class="image-container">
+                    <img src="https://i.imgur.com/LfpcyRr.jpeg" alt="Técnicas de comunicación proactiva" />
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title" onclick="toggleStrategy(this)">
+                        <div class="strategy-title-text">
+                            <i class="fas fa-bell strategy-icon"></i>
+                            Notificaciones proactivas
+                        </div>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </div>
+                    <div class="strategy-content">
+                        <p>El envío estratégico de alertas permite gestionar expectativas y reducir frustración.</p>
+                        <h4>Tipos de notificaciones efectivas:</h4>
+                        <ul class="example-list">
+                            <li><strong>Retrasos en envíos:</strong> Notificar inmediatamente con causa, tiempo estimado y compensación si aplica</li>
+                            <li><strong>Interrupciones de servicio:</strong> Comunicar mantenimientos programados con al menos 48 horas de anticipación</li>
+                            <li><strong>Actualizaciones de producto:</strong> Informar sobre nuevas funciones con tutoriales incluidos</li>
+                            <li><strong>Cambios en términos:</strong> Explicar modificaciones con tiempo suficiente para que el cliente decida</li>
+                        </ul>
+                        <div class="quiz-container">
+                            <div class="quiz-question">¿Cuál es el elemento más importante en una notificación proactiva efectiva?</div>
+                            <div class="quiz-options">
+                                <div class="quiz-option" onclick="selectQuizOption(this, false, 'Aunque es importante, no es lo más crucial para una comunicación proactiva efectiva.')">
+                                    <span>Usar múltiples canales de comunicación</span>
+                                </div>
+                                <div class="quiz-option" onclick="selectQuizOption(this, true, '¡Correcto! La transparencia y honestidad sobre la situación genera confianza y reduce la ansiedad del cliente.')">
+                                    <span>Ser transparente sobre la causa y el impacto del problema</span>
+                                </div>
+                                <div class="quiz-option" onclick="selectQuizOption(this, false, 'El diseño es secundario comparado con el contenido y la honestidad del mensaje.')">
+                                    <span>Tener un diseño atractivo y profesional</span>
+                                </div>
+                                <div class="quiz-option" onclick="selectQuizOption(this, false, 'Personalizar es valioso, pero la transparencia es fundamental para mantener la confianza.')">
+                                    <span>Personalizar el mensaje con el nombre del cliente</span>
+                                </div>
+                            </div>
+                            <div class="quiz-feedback"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title" onclick="toggleStrategy(this)">
+                        <div class="strategy-title-text">
+                            <i class="fas fa-graduation-cap strategy-icon"></i>
+                            Contenido educativo
+                        </div>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </div>
+                    <div class="strategy-content">
+                        <p>Empoderar a los clientes con conocimiento les permite resolver problemas independientemente.</p>
+                        <h4>Formatos de contenido educativo:</h4>
+                        <ul class="example-list">
+                            <li><strong>Tutoriales paso a paso:</strong> Videos cortos que muestran cómo resolver problemas comunes</li>
+                            <li><strong>FAQs dinámicas:</strong> Preguntas frecuentes que se actualizan basándose en consultas recientes</li>
+                            <li><strong>Artículos informativos:</strong> Guías detalladas sobre el uso óptimo del producto o servicio</li>
+                            <li><strong>Webinars y workshops:</strong> Sesiones interactivas para usuarios avanzados</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title" onclick="toggleStrategy(this)">
+                        <div class="strategy-title-text">
+                            <i class="fas fa-phone strategy-icon"></i>
+                            Mensajes de seguimiento
+                        </div>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </div>
+                    <div class="strategy-content">
+                        <p>El contacto proactivo demuestra compromiso con la satisfacción del cliente a largo plazo.</p>
+                        <h4>Momentos clave para el seguimiento:</h4>
+                        <ul class="example-list">
+                            <li><strong>Post-compra inmediato:</strong> 24-48 horas después para confirmar satisfacción</li>
+                            <li><strong>Seguimiento de resolución:</strong> Una semana después de resolver un problema</li>
+                            <li><strong>Check-ins periódicos:</strong> Cada 3-6 meses para clientes regulares</li>
+                            <li><strong>Aniversarios de cliente:</strong> Celebrar fechas importantes con ofertas especiales</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="section-3">
+                <h2>Personalización avanzada</h2>
+                <p>La segmentación y personalización permiten crear experiencias únicas que resonan con las necesidades específicas de cada cliente.</p>
+                <div class="strategy-card">
+                    <div class="strategy-title" onclick="toggleStrategy(this)">
+                        <div class="strategy-title-text">
+                            <i class="fas fa-users strategy-icon"></i>
+                            Segmentación inteligente
+                        </div>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </div>
+                    <div class="strategy-content">
+                        <p>Dividir la base de clientes en grupos homogéneos permite comunicaciones más relevantes y efectivas.</p>
+                        <h4>Criterios de segmentación:</h4>
+                        <ul class="example-list">
+                            <li><strong>Demográfica:</strong> Edad, ubicación, industria, tamaño de empresa</li>
+                            <li><strong>Comportamental:</strong> Frecuencia de compra, valor del cliente, productos preferidos</li>
+                            <li><strong>Psicográfica:</strong> Valores, intereses, estilo de vida, motivaciones</li>
+                            <li><strong>Tecnográfica:</strong> Nivel de adopción tecnológica, canales preferidos de comunicación</li>
+                        </ul>
+                        <div class="implementation-grid">
+                            <div class="implementation-card">
+                                <div class="implementation-icon">
+                                    <i class="fas fa-crown"></i>
+                                </div>
+                                <div class="implementation-title">Clientes VIP</div>
+                                <p>Atención prioritaria, gerente de cuenta dedicado, ofertas exclusivas</p>
+                            </div>
+                            <div class="implementation-card">
+                                <div class="implementation-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <div class="implementation-title">Nuevos clientes</div>
+                                <p>Onboarding personalizado, tutoriales básicos, soporte extendido</p>
+                            </div>
+                            <div class="implementation-card">
+                                <div class="implementation-icon">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                </div>
+                                <div class="implementation-title">En riesgo</div>
+                                <p>Comunicación frecuente, ofertas especiales, investigación de causas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title" onclick="toggleStrategy(this)">
+                        <div class="strategy-title-text">
+                            <i class="fas fa-envelope strategy-icon"></i>
+                            Comunicación personalizada
+                        </div>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </div>
+                    <div class="strategy-content">
+                        <p>Adaptar el mensaje, canal y timing según las preferencias individuales del cliente.</p>
+                        <h4>Elementos de personalización:</h4>
+                        <ul class="example-list">
+                            <li><strong>Contenido dinámico:</strong> Recomendaciones basadas en historial de compras</li>
+                            <li><strong>Timing optimizado:</strong> Envío en horarios de mayor actividad del cliente</li>
+                            <li><strong>Canal preferido:</strong> Email, SMS, push notifications según preferencias</li>
+                            <li><strong>Tono de comunicación:</strong> Formal/informal basado en el perfil del cliente</li>
+                        </ul>
+                        <div class="scenario-container">
+                            <div class="scenario-title">
+                                <i class="fas fa-mobile-alt scenario-icon"></i>
+                                Ejemplo de personalización
+                            </div>
+                            <p><strong>Cliente A (Ejecutivo ocupado):</strong> Recibe un SMS conciso a las 7 AM con información clave sobre una actualización de servicio.</p>
+                            <p><strong>Cliente B (Entusiasta de tecnología):</strong> Recibe un email detallado a las 8 PM con especificaciones técnicas completas y enlaces a documentación adicional.</p>
+                            <p><strong>Mismo mensaje, diferentes enfoques</strong> basados en el perfil y preferencias de cada cliente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-container">
+                    <div class="quiz-question">¿Cuál de estas estrategias de personalización tendrá mayor impacto en la satisfacción del cliente?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectQuizOption(this, false, 'Aunque importante, el nombre es solo el primer paso básico de personalización.')">
+                            <span>Usar el nombre del cliente en todos los emails</span>
+                        </div>
+                        <div class="quiz-option" onclick="selectQuizOption(this, true, '¡Excelente! La personalización basada en comportamiento y datos genera experiencias verdaderamente relevantes.')">
+                            <span>Combinar datos demográficos, comportamentales y preferencias de comunicación</span>
+                        </div>
+                        <div class="quiz-option" onclick="selectQuizOption(this, false, 'La frecuencia alta puede ser contraproducente si no está bien segmentada.')">
+                            <span>Enviar comunicaciones diarias a todos los clientes</span>
+                        </div>
+                        <div class="quiz-option" onclick="selectQuizOption(this, false, 'Un solo canal limita las oportunidades de llegar efectivamente a diferentes tipos de clientes.')">
+                            <span>Usar únicamente email como canal de comunicación</span>
+                        </div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+            <section class="section" id="section-4">
+                <h2>Aplicación práctica y casos de estudio</h2>
+                <p>Pon en práctica las estrategias aprendidas a través de escenarios reales y desafíos interactivos.</p>
+                <div class="scenario-container">
+                    <div class="scenario-title">
+                        <i class="fas fa-briefcase scenario-icon"></i>
+                        Caso de estudio: SaaS B2B
+                    </div>
+                    <p><strong>SaaS B2B:</strong> Se refiere a Software como Servicio (SaaS) ofrecido de Negocio a Negocio (B2B). Es decir, empresas que venden software en línea, basado en suscripciones, a otras empresas. Por ejemplo, un software de contabilidad en la nube para empresas, una herramienta de gestión de proyectos, o un CRM.</p>
+                    <div class="scenario-scenario">
+                        <p><strong>Situación:</strong> Una empresa de software (SaaS) que vende una herramienta de gestión de proyectos a otras empresas (B2B) nota que el 30% de sus clientes no han usado una función clave de colaboración en los últimos 60 días, lo que históricamente indica un alto riesgo de que cancelen su suscripción.</p>
+                        <h4>Estrategia implementada:</h4>
+                        <div class="tools-grid">
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="tool-title">1. Identificación</div>
+                                <p>Análisis automatizado detecta patrones de uso decreciente</p>
+                            </div>
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-target"></i>
+                                </div>
+                                <div class="tool-title">2. Segmentación</div>
+                                <p>Categorizar por nivel de experiencia y industria</p>
+                            </div>
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="tool-title">3. Intervención</div>
+                                <p>Webinar personalizado y sesión 1:1 con especialista</p>
+                            </div>
+                            <div class="tool-card">
+                                <div class="tool-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="tool-title">4. Resultado</div>
+                                <p>85% reactivaron la función, 92% renovaron contrato</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="interactive-element">
+                    <h3><i class="fas fa-lightbulb" style="color: var(--golden-yellow); margin-right: 10px;"></i>Simulación Interactiva</h3>
+                    <p><strong>Tu turno:</strong> Una plataforma de e-learning detecta que un grupo de estudiantes no ha accedido al curso en 2 semanas. ¿Qué estrategia proactiva implementarías?</p>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectSimulationOption(this, false, 'Muy básico. No personaliza ni ofrece valor específico para reenganche.')">
+                            <span>Enviar un email recordatorio genérico a todos</span>
+                        </div>
+                        <div class="quiz-option" onclick="selectSimulationOption(this, true, '¡Perfecto! Esta estrategia combina personalización, valor agregado y múltiples touchpoints.')">
+                            <span>Segmentar por progreso del curso, enviar contenido personalizado y ofrecer sesión de coaching gratuita</span>
+                        </div>
+                        <div class="quiz-option" onclick="selectSimulationOption(this, false, 'Aunque puede funcionar a corto plazo, no aborda las causas subyacentes del desenganche.')">
+                            <span>Ofrecer un descuento automático del 20%</span>
+                        </div>
+                        <div class="quiz-option" onclick="selectSimulationOption(this, false, 'Esperar es lo opuesto a ser proactivo. Puede resultar en pérdida definitiva del estudiante.')">
+                            <span>Esperar una semana más para ver si regresan por sí solos</span>
+                        </div>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                <div class="quiz-container">
+                    <div class="quiz-question">Comprueba tu conocimiento: ¿Cuáles son los elementos esenciales de una estrategia proactiva exitosa? (Selecciona todas las correctas)</div>
+                    <div class="quiz-options" data-multiple="true">
+                        <div class="quiz-option" onclick="selectMultipleOption(this, true)" data-original-correct="true">
+                            <span>Monitoreo continuo del comportamiento del cliente</span>
+                        </div>
+                        <div class="quiz-option" onclick="selectMultipleOption(this, true)" data-original-correct="true">
+                            <span>Segmentación basada en datos múltiples</span>
+                        </div>
+                        <div class="quiz-option" onclick="selectMultipleOption(this, false)" data-original-correct="false">
+                            <span>Comunicación masiva sin segmentación</span>
+                        </div>
+                        <div class="quiz-option" onclick="selectMultipleOption(this, true)" data-original-correct="true">
+                            <span>Personalización de mensajes y canales</span>
+                        </div>
+                        <div class="quiz-option" onclick="selectMultipleOption(this, true)" data-original-correct="true">
+                            <span>Uso de IA para predicción de necesidades</span>
+                        </div>
+                        <div class="quiz-option" onclick="selectMultipleOption(this, false)" data-original-correct="false">
+                            <span>Respuesta únicamente cuando el cliente contacta</span>
+                        </div>
+                    </div>
+                    <div class="quiz-buttons-group">
+                        <button class="nav-button" id="checkFinalBtn" onclick="checkFinalAnswer(this)">
+                            <i class="fas fa-check"></i> Verificar Respuesta Final
+                        </button>
+                        <button class="nav-button" id="resetFinalBtn" onclick="resetFinalQuestion()">
+                            <i class="fas fa-redo"></i> Reiniciar Pregunta
+                        </button>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+                <div class="interactive-element">
+                    <h3><i class="fas fa-trophy" style="color: var(--golden-yellow); margin-right: 10px;"></i>¡Felicitaciones!</h3>
+                    <p>Has completado el tema de Estrategias para Soluciones Proactivas y Personalizadas. Ahora puedes:</p>
+                    <ul class="example-list">
+                        <li>
+                            <div class="example-title">Implementar monitoreo inteligente</div>
+                            <div>Usar datos y IA para anticipar necesidades del cliente</div>
+                        </li>
+                        <li>
+                            <div class="example-title">Diseñar comunicaciones proactivas</div>
+                            <div>Crear notificaciones, contenido educativo y seguimientos efectivos</div>
+                        </li>
+                        <li>
+                            <div class="example-title">Personalizar experiencias</div>
+                            <div>Segmentar audiencias y adaptar mensajes para máximo impacto</div>
+                        </li>
+                        <li>
+                            <div class="example-title">Aplicar estrategias avanzadas</div>
+                            <div>Combinar múltiples técnicas para crear experiencias excepcionales</div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="score-display" id="finalScore">
+                    Puntuación del módulo: <span id="totalScoreValue">0/10</span> puntos
+                </div>
+            </section>
+            <div class="navigation-buttons">
+                <button class="nav-button" id="prevBtn" onclick="previousSection()" disabled>
+                    <i class="fas fa-chevron-left"></i> Anterior
+                </button>
+                <div class="section-indicator">
+                    <span id="sectionIndicator">Sección 1 de 5</span>
+                </div>
+                <button class="nav-button" id="nextBtn" onclick="nextSection()">
+                    Siguiente <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <footer>
+            <p>Estrategias para soluciones proactivas y personalizadas | Contexto Comunicación © 2025</p>
+        </footer>
+    </div>
+    <script>
+        let currentSection = 0;
+        let totalSections = 5;
+        let quizScore = 0;
+        let possibleMaxScore = 10; 
+        let questionAttempted = {
+            'quiz-option-1-answered': false, 
+            'quiz-option-2-answered': false, 
+            'simulation-option-1-answered': false, 
+            'final-quiz-answered': false 
+        };
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+            updateNavigation();
+            updateScoreDisplay(); 
+            // Initialize accordion icons
+            document.querySelectorAll('.strategy-content').forEach(content => {
+                const icon = content.previousElementSibling.querySelector('.accordion-icon');
+                if (content.classList.contains('expanded')) {
+                    icon.classList.replace('fa-plus', 'fa-minus');
+                } else {
+                    icon.classList.replace('fa-minus', 'fa-plus');
+                }
+            });
+        });
+        function nextSection() {
+            if (currentSection < totalSections - 1) {
+                document.querySelector(`#section-${currentSection}`).classList.remove('active');
+                currentSection++;
+                document.querySelector(`#section-${currentSection}`).classList.add('active');
+                resetQuizStates(); 
+                updateProgress();
+                updateNavigation();
+                scrollToTop();
+            } else if (currentSection === totalSections - 1) {
+                alert('¡Módulo completado! Has terminado exitosamente el aprendizaje sobre Estrategias Proactivas y Personalizadas.');
+            }
+        }
+        function previousSection() {
+            if (currentSection > 0) {
+                document.querySelector(`#section-${currentSection}`).classList.remove('active');
+                currentSection--;
+                document.querySelector(`#section-${currentSection}`).classList.add('active');
+                resetQuizStates(); 
+                updateProgress();
+                updateNavigation();
+                scrollToTop();
+            }
+        }
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+        function resetQuizStates() {
+            // This function resets all quizzes across the entire page,
+            // which might not be desired if quizzes span multiple sections.
+            // For this specific structure, it's okay as quizzes are contained within sections.
+            document.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+            document.querySelectorAll('.quiz-feedback').forEach(fb => {
+                fb.style.display = 'none';
+                fb.innerHTML = '';
+            });
+            // Ensure the specific final quiz buttons are handled correctly here too
+            const finalCheckBtn = document.getElementById('checkFinalBtn');
+            if (finalCheckBtn) { // Only enable if not already correctly answered
+                if (!questionAttempted['final-quiz-answered']) {
+                    finalCheckBtn.disabled = false;
+                }
+            }
+        }
+        function updateProgress() {
+            const progressText = document.getElementById('progressText');
+            const sectionIndicator = document.getElementById('sectionIndicator');
+            progressText.textContent = `${currentSection + 1}/${totalSections}`;
+            sectionIndicator.textContent = `Sección ${currentSection + 1} de ${totalSections}`;
+            const finalScoreDisplay = document.getElementById('finalScore');
+            if (currentSection === totalSections - 1) {
+                finalScoreDisplay.style.display = 'block';
+            } else {
+                finalScoreDisplay.style.display = 'none';
+            }
+        }
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            prevBtn.disabled = currentSection === 0;
+            if (currentSection === totalSections - 1) {
+                nextBtn.innerHTML = '<i class="fas fa-flag-checkered"></i> Finalizar';
+                nextBtn.onclick = () => alert('¡Módulo completado! Has terminado exitosamente el aprendizaje sobre Estrategias Proactivas y Personalizadas.');
+            } else {
+                nextBtn.innerHTML = 'Siguiente <i class="fas fa-chevron-right"></i>';
+                nextBtn.onclick = nextSection;
+            }
+        }
+        function toggleStrategy(titleElement) {
+            const card = titleElement.closest('.strategy-card');
+            const content = card.querySelector('.strategy-content');
+            const icon = titleElement.querySelector('.accordion-icon');
+            const isExpanded = content.classList.contains('expanded');
+            // Close all other expanded strategy cards and reset their icons
+            document.querySelectorAll('.strategy-content.expanded').forEach(c => {
+                if (c !== content) { // Only close if not the current card's content
+                    c.classList.remove('expanded');
+                    const otherIcon = c.previousElementSibling.querySelector('.accordion-icon');
+                    if (otherIcon) { // Ensure icon exists
+                        otherIcon.classList.replace('fa-minus', 'fa-plus');
+                    }
+                }
+            });
+            // Toggle the current card's content and icon
+            if (!isExpanded) {
+                content.classList.add('expanded');
+                icon.classList.replace('fa-plus', 'fa-minus');
+            } else {
+                content.classList.remove('expanded');
+                icon.classList.replace('fa-minus', 'fa-plus');
+            }
+        }
+        function selectQuizOption(option, isCorrect, explanation) {
+            const container = option.closest('.quiz-options');
+            const feedback = container.nextElementSibling; 
+            const quizContainer = container.closest('.quiz-container');
+            let questionId = '';
+            // Assign unique IDs based on the question text (could also use data-id attributes on quiz-containers)
+            if (quizContainer.querySelector('.quiz-question').textContent.includes('notificación proactiva')) {
+                questionId = 'quiz-option-1-answered';
+            } else if (quizContainer.querySelector('.quiz-question').textContent.includes('satisfacción del cliente')) {
+                questionId = 'quiz-option-2-answered';
+            }
+            // Remove selected/correct/incorrect from all options in this question
+            container.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+            option.classList.add('selected'); // Mark the clicked option as selected
+            if (isCorrect) {
+                option.classList.add('correct');
+                feedback.className = 'quiz-feedback correct';
+                feedback.innerHTML = `<i class="fas fa-check-circle"></i> ${explanation}`;
+                feedback.style.display = 'block';
+                if (!questionAttempted[questionId]) { // Only add score if not previously answered correctly
+                    quizScore += 2; 
+                    questionAttempted[questionId] = true;
+                }
+            } else {
+                option.classList.add('incorrect');
+                feedback.className = 'quiz-feedback incorrect';
+                feedback.innerHTML = `<i class="fas fa-times-circle"></i> ${explanation}`;
+                feedback.style.display = 'block';
+            }
+            updateScoreDisplay();
+        }
+        function selectSimulationOption(option, isCorrect, explanation) {
+            const container = option.closest('.quiz-options');
+            const feedback = container.nextElementSibling; 
+            const questionId = 'simulation-option-1-answered';
+            container.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+            option.classList.add('selected');
+            if (isCorrect) {
+                option.classList.add('correct');
+                feedback.className = 'quiz-feedback correct';
+                feedback.innerHTML = `<i class="fas fa-check-circle"></i> ${explanation}`;
+                feedback.style.display = 'block';
+                if (!questionAttempted[questionId]) {
+                    quizScore += 2; 
+                    questionAttempted[questionId] = true;
+                }
+            } else {
+                option.classList.add('incorrect');
+                feedback.className = 'quiz-feedback incorrect';
+                feedback.innerHTML = `<i class="fas fa-times-circle"></i> ${explanation}`;
+                feedback.style.display = 'block';
+            }
+            updateScoreDisplay();
+        }
+        function selectMultipleOption(option) {
+            option.classList.toggle('selected');
+            // Clear feedback immediately when options are changed for multiple choice
+            const quizContainer = option.closest('.quiz-container');
+            const feedback = quizContainer.querySelector('.quiz-feedback');
+            feedback.style.display = 'none';
+            feedback.innerHTML = '';
+            // Re-enable check button if it was disabled (unless already correctly answered and points awarded)
+            const checkBtn = quizContainer.querySelector('#checkFinalBtn');
+            if (checkBtn && !questionAttempted['final-quiz-answered']) {
+                checkBtn.disabled = false;
+            }
+        }
+        function checkFinalAnswer(button) {
+            const quizContainer = button.closest('.quiz-container');
+            const container = quizContainer.querySelector('.quiz-options'); 
+            const feedback = quizContainer.querySelector('.quiz-feedback');
+            const selectedOptions = container.querySelectorAll('.quiz-option.selected');
+            const allCorrectOptions = container.querySelectorAll('.quiz-option[data-original-correct="true"]');
+            const questionId = 'final-quiz-answered';
+            // Clear previous correct/incorrect highlights on all options
+            container.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+            let isCompletelyCorrect = true;
+            let correctSelectedCount = 0;
+            selectedOptions.forEach(option => {
+                if (option.dataset.originalCorrect === 'true') {
+                    option.classList.add('correct');
+                    correctSelectedCount++;
+                } else {
+                    option.classList.add('incorrect'); // Selected an incorrect option
+                    isCompletelyCorrect = false;
+                }
+            });
+            // Check if all correct options were selected AND no incorrect options were selected
+            if (correctSelectedCount !== allCorrectOptions.length || selectedOptions.length !== allCorrectOptions.length) {
+                isCompletelyCorrect = false;
+            }
+            // Also highlight correct options that were missed as incorrect (visual aid)
+            allCorrectOptions.forEach(correctOption => {
+                if (!correctOption.classList.contains('selected')) {
+                    correctOption.classList.add('incorrect'); 
+                    isCompletelyCorrect = false;
+                }
+            });
+            if (isCompletelyCorrect) {
+                feedback.className = 'quiz-feedback correct';
+                feedback.innerHTML = '<i class="fas fa-check-circle"></i> ¡Excelente! Has identificado todos los elementos esenciales de una estrategia proactiva exitosa.';
+                if (!questionAttempted[questionId]) { // Only add score if not previously answered correctly
+                    quizScore += 4; 
+                    questionAttempted[questionId] = true;
+                    button.disabled = true; 
+                }
+            } else {
+                feedback.className = 'quiz-feedback incorrect';
+                feedback.innerHTML = '<i class="fas fa-times-circle"></i> Revisa tu selección. Asegúrate de seleccionar *todos* los elementos correctos y *solo* los correctos.';
+                // If incorrect, ensure the button is enabled for re-attempts
+                button.disabled = false;
+            }
+            feedback.style.display = 'block';
+            updateScoreDisplay();
+        }
+        function resetFinalQuestion() {
+            const quizContainer = document.getElementById('section-4').querySelector('.quiz-container');
+            const container = quizContainer.querySelector('.quiz-options');
+            const feedback = quizContainer.querySelector('.quiz-feedback');
+            const checkBtn = quizContainer.querySelector('#checkFinalBtn'); // Get the button within this quiz container
+            container.querySelectorAll('.quiz-option').forEach(opt => {
+                opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+            feedback.style.display = 'none';
+            feedback.innerHTML = '';
+            checkBtn.disabled = false; // Always re-enable check button on reset
+            // Important: This reset only clears the visual state. It does NOT reduce the score
+            // if the question was already answered correctly and points were awarded.
+            // If you want to allow re-scoring or penalize multiple attempts,
+            // the scoring logic in checkFinalAnswer and questionAttempted would need adjustment.
+        }
+        function updateScoreDisplay() {
+            const scoreValue = document.getElementById('totalScoreValue');
+            if (scoreValue) {
+                let currentDisplayScore = Math.min(quizScore, possibleMaxScore);
+                scoreValue.textContent = `${currentDisplayScore}/${possibleMaxScore}`;
+            }
+        }
+    </script>
+</body>
+</html>
